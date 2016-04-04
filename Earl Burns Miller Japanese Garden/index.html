@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EBMJG</title>
+		<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+		
+         
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        
+        <!--Slider reference files-->
+       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+<link href="js/jquery.bxslider.css" rel="stylesheet" />
+               
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+<link rel="stylesheet" href="css/new.css">
+        
+<script>
+    var imgs = new Array("images/main.jpg","images/5.jpg", "images/4.jpg", "images/7.jpg", "images/6.jpg","images/9.jpg");
+    var overlayVisible = true;
+    var arrayPosition = 0;
+    var fadeTime = 1400;
+    
+    function changeBg() {
+        var header = $('header');
+        var headerOverlay = $('.headerOverlay');
+    
+        
+        arrayPosition += 2;
+        if (arrayPosition > imgs.length - 1) {
+            arrayPosition = 0;
+        }
+        
+        if (overlayVisible) {
+            headerOverlay.fadeOut(fadeTime, function() {
+                headerOverlay.css("background-image",'url(' + imgs[arrayPosition] + ')');
+            });
+            overlayVisible = false;
+        } else {
+            headerOverlay.fadeIn(fadeTime, function() {
+                var headerImagePosition = arrayPosition + 1;
+                if (headerImagePosition > imgs.length - 1)
+                  headerImagePosition = 0;
+                header.css("background-image", 'url(' + imgs[headerImagePosition] + ')');
+            });
+            overlayVisible = true;
+        }
+    }
+    
+    $(document).ready(function () {
+        var header = $('header');
+        var headerOverlay = $('.headerOverlay');
+        headerOverlay.css("background-image",'url(' + imgs[0] + ')');
+        header.css("background-image", 'url(' + imgs[1] + ')');
+
+        setInterval(function () {
+            changeBg();
+        }, 3000);
+    });
+    
+</script>
+      
+	</head>
+	<body>
+       <header>
+           <div class="headerOverlay"></div>
+           <div class="fixed">
+           <div class="menu">
+        <ul class="nav nav-tabs">
+  <li><a class="active" href="#home">HOME</a></li>
+  <li><a class="active" href="https://web.csulb.edu/~jgarden/aboutus/aboutus.html">THE GARDEN</a></li>
+  <li><a class="active" href="https://web.csulb.edu/~jgarden/aboutus/membership.html">MEMBERSHIP</a></li>
+  <li><a class="active" href="https://web.csulb.edu/~jgarden/aboutus/event.html">GARDEN EVENTS</a></li>
+  <li><a class="active" href="https://web.csulb.edu/~jgarden/education/edu.html">EDUCATION</a></li>
+  <li><a class="active" href="https://web.csulb.edu/~jgarden/WedReceptions/wed_rec.html">GARDEN RENTALS</a></li>          
+  <li><a class="active" href="https://web.csulb.edu/~jgarden/aboutus/contactus.html">CONTACT US</a></li> 
+              
+			</ul>
+           </div> 
+        
+             <div class="submenu">
+        <ul class="nav nav-tabs">
+  <li><a class="active" href="#home">Special Interests :</a></li>
+   <li><a class="active" href="https://web.csulb.edu/~jgarden/aboutus/Tours/mapofthegarden.html">Photo Tour</a></li>
+  <li><a class="active" href="https://web.csulb.edu/~jgarden/aboutus/virtualtour.html">Video tour</a></li>
+  <li><a class="active" href="https://web.csulb.edu/~jgarden/aboutus/history.html">History</a></li>
+  <li><a class="active" href="https://web.csulb.edu/~jgarden/aboutus/direction.htm">Directions</a></li>
+  <li><a class="active" href="https://web.csulb.edu/~jgarden/aboutus/movies.html">Movies</a></li>
+  <li><a class="active" href="https://web.csulb.edu/~jgarden/galleries/galleries.html">Galleries</a></li>          
+  <li><a class="active" href="https://web.csulb.edu/~jgarden/forms/volunteers.html">Volunteers</a></li>     
+  <li><a class="active" href="https://web.csulb.edu/~jgarden/aboutus/students.html">Students</a></li>          
+  <li><a class="active" href="https://web.csulb.edu/~jgarden/education/living-collection.html">The Living Collection</a></li>        
+
+</ul>
+           </div> </div>
+		</header>
+      <br>
+        
+       <div class="container-fluid">
+  <div class="row">
+    <div style="background-color:#cccccc" class="col-md-3">
+      <!--Sidebar content-->
+        <tr>
+        <td>
+           <div> <img src="images/NAJGA_logo.png" alt=""> We are a part of the NAJGA!
+       </div>
+            </td></tr>
+    <p></p>
+        <tr>
+        <td height="100"><a href="aboutus/event.html"><img src="images/homepage_ad.jpg" width="300" height="241" alt=""/></a></td>
+      </tr>
+<p></p>
+        
+        <tr>
+            <td width="186"><a href="https://giveto.csulb.edu/?fund=JPG" target="_blank"><img src="images/icon_180_givenow.gif" alt="Give: Make a Gift to the Earl Burns Miller Japanese Garden NOW" width="182" height="48" border="0" /></a></td>
+            <td class="learnmore"><a href="aboutus/aboutus.html#give">Learn more... </a></td>
+            </tr>
+        
+        
+      </div>
+           
+    <div style="background-color:white" class="col-md-6">
+    
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="images/wedding1.jpg" alt="" width="800" height="345" >
+      </div>
+
+      <div class="item">
+        <img src="images/wedding2.jpg" alt="" width="800" height="345">
+      </div>
+    
+      <div class="item">
+        <img src="images/wedding3.jpg" alt="" width="800" height="345">
+      </div>
+
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+      </div>
+      
+      <div style="background-color:#cccccc" class="col-md-3">
+      <!--Sidebar content-->
+         <tr>
+    <td height="320" valign="middle" bgcolor="#819c8b"><p class="white"><img src="images/DSC_0147.jpg" alt="" width="130" height="110" align="right" /><strong>REGULAR HOURS: </strong>
+      <strong>Tuesday through Friday: </strong>8:00 am to 3:30 pm<br />
+      <strong>Sunday:</strong> 12 to 4:00 pm<br />
+      <strong>Closed:</strong> Mondays and Saturdays </p>
+      <p class="white"><strong style="color: #650709">CLOSED FOR SPRING BREAK<br />
+        March 27, 2016 to April 3, 2016</strong> </p>
+      <p class="white"><strong>Please keep in mind, the garden gate is locked 15 minutes prior to closing time.</strong></p>
+      <p class="white">Please note we are closed during major holidays, for the campus winter recess and that all hours are subject to change without notice. For more information please call (562) 985-8885. <a href="http://www.csulb.edu/~jgarden/aboutus/aboutus.html" class="whitelink">More Information</a></p>
+      <p class="white"><strong><em>Group visits from organizations require a reservation
+        </em><a href="education/Tour_Fieldtrip.html" class="whitelink">Group visit information</a>
+      </strong></p></td>
+    </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+    </div>
+  </div>
+</div>
+        </br>
+         <!--div class="container-fluid">
+  <div class="row">
+        
+       <div id="map" ></div>
+    <script>
+      function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+          center: {lat: 44.540, lng: -78.546},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
+             </div>
+        </div-->
+        
+   <div class="learn-more">
+			<div class="container">
+				<div class="row">
+					<div class="copyright"> Copyright &copy; 2016 
+				<div class="pull-right">
+                    <a href="https://www.facebook.com/EBM.Japanese.Garden"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/ebmjg/"><i class="fa fa-instagram"></i></a>
+                    <a href="https://twitter.com/ebmjg"><i class="fa fa-twitter"></i></a>
+                     <a href="https://www.pinterest.com/jgcoordinators"><i class="fa fa-pinterest-p"></i></a>
+</div></div>
+
+				</div>
+			</div>
+		</div>
+    
+    
+    
+    </body>
+</html>
